@@ -5,6 +5,7 @@ class Stat(BaseModel):
     id: int
     value: int | None
 
+
 class ClassDefinition(BaseModel):
     name: str
     description: str
@@ -40,10 +41,10 @@ class GetCharacterData(BaseModel):
     stats: list[Stat]
     bonusStats: list[Stat]
     race: Race
-    classes: list[]
+    classes: list[Class]
 
 
 class GetCharacterResponse(BaseModel):
     success: bool
     message: str
-    data: GetCharacterData
+    data: GetCharacterData | None
